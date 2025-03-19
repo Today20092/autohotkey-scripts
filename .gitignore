@@ -1,0 +1,22 @@
+# Compiled binaries
+*.exe
+*.ahk.exe
+
+# Temporary files and backups
+*.bak
+*.tmp
+~*
+# Autohotkey compiled objects
+*.obj
+
+# IDE specific files (if applicable)
+.vscode/
+.idea/
+
+# Other possible temporary files
+*.log
+*.ini
+
+# System files (if applicable)
+Thumbs.db
+desktop.ini
