@@ -1,12 +1,21 @@
 #Requires AutoHotkey v2.0
-
-#Requires AutoHotkey v2.0
 #SingleInstance Force
 A_IconTip := 'AutoHotKey Script used by typing "~audio" into command prompt after copying the URL of the youtube video'
 
 #SuspendExempt true
 ^!r:: Reload ; Ctrl+Alt+R
 #SuspendExempt false
+
+; Define the function first
+ResetYT_DLP(ItemName, ItemPos, MyMenu) {
+    IniDelete("yt_dlp_path.ini", "Settings", "yt_dlp_path")
+    MsgBox("YT-DLP path has been reset. Script will now reload.")
+    Reload
+}
+
+; Access the tray menu correctly
+MyMenu := A_TrayMenu
+MyMenu.Add("Reset The Path of YT-DLP", ResetYT_DLP)
 
 ; Load yt-dlp path from INI file or prompt user
 yt_dlp_path := IniRead("yt_dlp_path.ini", "Settings", "yt_dlp_path", "")
